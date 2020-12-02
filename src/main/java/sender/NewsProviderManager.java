@@ -42,10 +42,9 @@ public class NewsProviderManager {
 
     public void publishNews (Event event) throws IOException, TimeoutException {
         byte[] message = SerializationUtils.serialize(event);
-        if(!(event.getEventType() == EventType.ADD)) {
+        if((event.getEventType() == EventType.ADD)) {
             channel.basicPublish("exchange", "reader", null, message);
-
-        }else if(!(event.getEventType() == EventType.READ)){
+        }else if((event.getEventType() == EventType.READ)){
             channel.basicPublish("exchange", "editor", null, message);
         }
     }
