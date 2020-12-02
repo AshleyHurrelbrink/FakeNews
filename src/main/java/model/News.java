@@ -1,22 +1,33 @@
 package model;
 
+import java.io.Serializable;
+import java.util.Date;
+import java.util.Objects;
 import org.joda.time.DateTime;
 
-import java.util.Date;
-
-public class News {
+public class News implements Serializable {
+    private int id;
     private String title;
     private String domain;
-    private Editor author;
+    private String author;
     private Date publishDate;
     private int numberOfReads;
 
-    public News(String title, String domain, Editor author, int pushBackDays) {
+    public News(int id, String title, String domain, String author, int pushBackDays) {
+        this.id = id;
         this.title = title;
         this.domain = domain;
         this.author = author;
         publishDate = new DateTime(new Date()).minusDays(pushBackDays).toDate();
         numberOfReads = 0;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -35,11 +46,11 @@ public class News {
         this.domain = domain;
     }
 
-    public Editor getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Editor author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -62,11 +73,32 @@ public class News {
     @Override
     public String toString() {
         return "News{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", domain='" + domain + '\'' +
                 ", author=" + author +
                 ", publishDate=" + publishDate +
                 ", numberOfReads=" + numberOfReads +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        News news = (News) o;
+        return id == news.id &&
+                numberOfReads == news.numberOfReads &&
+                Objects.equals(title, news.title) &&
+                Objects.equals(domain, news.domain) &&
+                Objects.equals(author, news.author) &&
+                Objects.equals(publishDate, news.publishDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, domain, author, publishDate, numberOfReads);
+    }
+
 }
+

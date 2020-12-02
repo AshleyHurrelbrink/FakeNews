@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9782880c-89ef-4d67-b8ee-c06e3987f263" name="Default Changelist" comment="" />
+    <list default="true" id="2cd5349b-6a81-4598-a39a-0d7d2469a457" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,14 +11,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1kW4pgWUJsRAk3SoQXMI84RzKxQ" />
+  <component name="ProjectId" id="1l4JqrzlhHjELJ4MTWQZClMnNGS" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="D:/Faculte_an3/Sem1/SSD" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="handler" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -32,17 +38,37 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="FakeNews" />
+  <component name="RunManager" selected="Application.NewsConsumer">
+    <configuration name="NewsConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="consumer.NewsConsumer" />
+      <module name="FakeNewsRabbitmq" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="consumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewsProvider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sender.NewsProvider" />
+      <module name="FakeNewsRabbitmq" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sender.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.NewsProvider" />
+        <item itemvalue="Application.NewsConsumer" />
       </list>
     </recent_temporary>
   </component>
@@ -51,11 +77,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9782880c-89ef-4d67-b8ee-c06e3987f263" name="Default Changelist" comment="" />
-      <created>1605803197640</created>
+      <changelist id="2cd5349b-6a81-4598-a39a-0d7d2469a457" name="Default Changelist" comment="" />
+      <created>1606850623291</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605803197640</updated>
+      <updated>1606850623291</updated>
     </task>
     <servers />
   </component>
