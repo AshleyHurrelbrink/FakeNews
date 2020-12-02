@@ -4,7 +4,7 @@ import model.Event;
 import service.NewsConsumerService;
 
 public class ReaderEventHandler implements EventHandler{
-    private NewsConsumerService newsConsumerService;
+    private NewsConsumerService newsConsumerService = new NewsConsumerService();
     private String domainInterest;
 
     public ReaderEventHandler(String domainInterest) {
@@ -16,31 +16,29 @@ public class ReaderEventHandler implements EventHandler{
         switch (event.getEventType()) {
             case ADD:
                 if(domainInterest.equals(event.getNews().getDomain())) {
-//                    this.news.add(e.getNews());
+                    newsConsumerService.addNews(event.getNews());
                     System.out.println("News with topic you are interested in has been added '" + event.getNews().getTitle() + "'");
                 }
                 break;
             case UPDATE:
                 if(domainInterest.equals(event.getNews().getDomain())) {
-//                    this.news.add(e.getNews());
+                    newsConsumerService.updateNewsIfDomainInterest(event.getNews());
                     System.out.println("News just changed its topic to one you might be interested in and has been added to your list '" + event.getNews().getTitle() + "'");
-
                 }
-//                else {
-//                    while (iterator.hasNext()) {
-//                        if(iterator.next().getId() == e.getNews().getId()) {
-//                            iterator.remove();
-//                            System.out.println("News just changed its topic to one you are not interested in and has been removed from your list '" + e.getNews().getTitle() + "'");
-//                        }
-//                    }
-//                }
+                else {
+                    newsConsumerService.updateNewsIfNotDomainInterest(event.getNews());
+                }
                 break;
             case DELETE:
                 if(domainInterest.equals(event.getNews().getDomain())) {
-//                    news.remove(e.getNews());
+                    newsConsumerService.deleteNews(event.getNews());
                     System.out.println("A news you are interested in has been deleted '" + event.getNews().getTitle() + "'");
                 }
                 break;
         }
+    }
+
+    public NewsConsumerService getNewsConsumerService() {
+        return newsConsumerService;
     }
 }
