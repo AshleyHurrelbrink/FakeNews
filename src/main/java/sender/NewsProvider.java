@@ -26,6 +26,10 @@ public class NewsProvider {
             Event event2 = new Event(news2, EventType.ADD);
             Event event3 = new Event(news3, EventType.ADD);
             Event event4 = new Event(news3, EventType.READ);
+            //pana aici
+            Event event5 = new Event(new News(2,"very true news cateiii", "misc", "editor", 1), EventType.UPDATE);
+            Event event6 = new Event(news3, EventType.READ);
+            Event event7 = new Event(news1, EventType.DELETE);
             byte[] message = SerializationUtils.serialize(event1);
             channel.basicPublish("exchange", "reader", null, message);
             message = SerializationUtils.serialize(event2);
@@ -34,6 +38,13 @@ public class NewsProvider {
             channel.basicPublish("exchange", "reader", null, message);
             message = SerializationUtils.serialize(event4);
             channel.basicPublish("exchange", "editor", null, message);
+            //pana aici
+            message = SerializationUtils.serialize(event5);
+            channel.basicPublish("exchange", "reader", null, message);
+            message = SerializationUtils.serialize(event6);
+            channel.basicPublish("exchange", "editor", null, message);
+            message = SerializationUtils.serialize(event7);
+            channel.basicPublish("exchange", "reader", null, message);
 //            String readEvent = "a news has been read";
 //            channel.basicPublish("", "editor", false, null, readEvent.getBytes());
             System.out.println("NewsProvider, provided an event");

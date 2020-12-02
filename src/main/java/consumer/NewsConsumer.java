@@ -15,7 +15,7 @@ import java.util.concurrent.TimeoutException;
 public class NewsConsumer {
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        EventHandler eventHandler1 = new ReaderEventHandler("zoo");
+        ReaderEventHandler eventHandler1 = new ReaderEventHandler("zoo");
         EventHandler eventHandler2 = new ReaderEventHandler("misc");
         EventHandler eventHandler3 = new EditorEventHandler();
 
@@ -36,6 +36,7 @@ public class NewsConsumer {
 //            System.out.println("Just recieved message: " + event.getNews());
             System.out.println("EventType " + event.getEventType());
             eventHandler1.handleEvent(event);
+            System.out.println("PT handler1  " + eventHandler1.getNewsConsumerService().getNews());
         }, consumerTag -> {});
 
         channel.basicConsume("reader2", true, (consumerTag, message) -> {
@@ -53,5 +54,7 @@ public class NewsConsumer {
             System.out.println("Editor event");
             eventHandler3.handleEvent(event);
         }, consumerTag -> {});
+
+
     }
 }
