@@ -20,20 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cd5349b-6a81-4598-a39a-0d7d2469a457" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/consumer/NewsConsumerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/consumer/NewsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/consumer/NewsConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sender/NewsProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sender/NewsProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sender/NewsProviderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sender/NewsProviderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/consumer/NewsConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/consumer/NewsConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/EditorEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/EditorEventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handler/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/handler/EventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/EventType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/EventType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/News.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/News.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sender/NewsProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sender/NewsProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sender/NewsProviderManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sender/NewsProviderManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/NewsConsumerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/NewsConsumerService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
