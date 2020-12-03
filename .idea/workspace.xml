@@ -20,8 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cd5349b-6a81-4598-a39a-0d7d2469a457" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/consumer/NewsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/consumer/NewsConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/consumer/NewsConsumerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/consumer/NewsConsumerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/EditorEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/EditorEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sender/NewsProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sender/NewsProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sender/NewsProviderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sender/NewsProviderManager.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +56,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="D:/Faculte_an3/Sem1/SSD" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -57,6 +65,18 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="handler" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.NewsProvider">
     <configuration name="NewsConsumer" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
@@ -110,12 +130,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2940" y="145" key="#NewsConsumer" timestamp="1606930703815">

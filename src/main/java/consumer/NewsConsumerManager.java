@@ -7,7 +7,6 @@ import handler.EventHandler;
 import handler.ReaderEventHandler;
 import model.Event;
 import org.apache.commons.lang3.SerializationUtils;
-import sender.NewsProviderManager;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
@@ -47,11 +46,11 @@ public class NewsConsumerManager {
         channel.basicConsume(str, true, (consumerTag, message) -> {
             byte[] data = message.getBody();
             Event event = SerializationUtils.deserialize(data);
-            System.out.println("Reader event: ");
-            System.out.println("EventType " + event.getEventType());
+            System.out.println(str + " event: ");
+            System.out.println("---> EventType " + event.getEventType());
             handler.handleEvent(event);
             if(handler instanceof ReaderEventHandler){
-                System.out.println("PT handler  " + ((ReaderEventHandler) handler).getNewsConsumerService().getNews());
+                System.out.println("---> " + "  " + ((ReaderEventHandler) handler).getNewsConsumerService().getNews());
             }
 
         }, consumerTag -> {});

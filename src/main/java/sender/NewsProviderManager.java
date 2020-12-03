@@ -9,9 +9,6 @@ import org.apache.commons.lang3.SerializationUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.concurrent.TimeoutException;
-
-import static model.EventType.ADD;
 
 public class NewsProviderManager {
     private static NewsProviderManager newsProviderManager_instance =null;
@@ -32,7 +29,7 @@ public class NewsProviderManager {
         return newsProviderManager_instance;
     }
 
-    private void publishNews (Event event) throws IOException, TimeoutException {
+    private void publishNews (Event event) throws IOException {
         byte[] message = SerializationUtils.serialize(event);
         if ((event.getEventType() == EventType.ADD)) {
             channel.basicPublish("exchange", "reader", null, message);
