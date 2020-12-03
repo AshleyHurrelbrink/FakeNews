@@ -56,9 +56,6 @@ public class NewsProvider {
 
         NewsProviderManager newsProviderManager= NewsProviderManager.getInstance();
 
-        for (Event elem : events){
-            newsProviderManager.publishNews(elem);
-            System.out.println("NewsProvider, provided an event");
-        }
+        newsProviderManager.publishAllNews(events);
     }
 }

@@ -21,14 +21,6 @@ public class NewsProviderManager {
 
     private NewsProviderManager() {
         connectionFactory = new ConnectionFactory();
-        try {
-            connection = connectionFactory.newConnection();
-            channel = connection.createChannel();
-            channel.queueDeclare("editor", false, false, false, null);
-            channel.exchangeDeclare("exchange", "direct");
-        }catch (Exception e){
-            System.out.println("Found exception");
-        }
 
     }
 
@@ -40,7 +32,7 @@ public class NewsProviderManager {
         return newsProviderManager_instance;
     }
 
-    public void publishNews (Event event) throws IOException, TimeoutException {
+    private void publishNews (Event event) throws IOException, TimeoutException {
         byte[] message = SerializationUtils.serialize(event);
         if ((event.getEventType() == EventType.ADD)) {
             channel.basicPublish("exchange", "reader", null, message);
@@ -50,6 +42,21 @@ public class NewsProviderManager {
             channel.basicPublish("exchange", "reader", null, message);
         } else if ((event.getEventType() == EventType.READ)) {
             channel.basicPublish("exchange", "editor", null, message);
+        }
+    }
+
+    public void publishAllNews(ArrayList<Event> events){
+        try {
+            connection = connectionFactory.newConnection();
+            channel = connection.createChannel();
+            channel.queueDeclare("editor", false, false, false, null);
+            channel.exchangeDeclare("exchange", "direct");
+            for (Event elem : events){
+                this.publishNews(elem);
+                System.out.println("NewsProvider, provided an event");
+            }
+        }catch (Exception e){
+            System.out.println("Found exception");
         }
     }
 }
