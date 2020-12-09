@@ -39,6 +39,11 @@ public class NewsConsumerManager {
     public void consume(String str, EventHandler handler, String domain) throws IOException {
         channel.queueDeclare(str, false, false, false, null);
         channel.queueBind(str,"exchange", domain);
+
+        if(str.contains("reader")){
+            channel.queueBind(str,"exchange", "update");
+        }
+
         channel.basicConsume(str, true, (consumerTag, message) -> {
             byte[] data = message.getBody();
             Event event = SerializationUtils.deserialize(data);

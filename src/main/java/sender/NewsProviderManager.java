@@ -34,7 +34,7 @@ public class NewsProviderManager {
         if ((event.getEventType() == EventType.ADD)) {
             channel.basicPublish("exchange", event.getNews().getDomain(), null, message);
         } else if ((event.getEventType() == EventType.UPDATE)) {
-            channel.basicPublish("exchange", "reader", null, message);
+            channel.basicPublish("exchange", "update", null, message);
         } else if ((event.getEventType() == EventType.DELETE)) {
             channel.basicPublish("exchange", event.getNews().getDomain(), null, message);
         } else if ((event.getEventType() == EventType.READ)) {
