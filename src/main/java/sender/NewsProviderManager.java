@@ -32,11 +32,11 @@ public class NewsProviderManager {
     private void publishNews (Event event) throws IOException {
         byte[] message = SerializationUtils.serialize(event);
         if ((event.getEventType() == EventType.ADD)) {
-            channel.basicPublish("exchange", "reader", null, message);
+            channel.basicPublish("exchange", event.getNews().getDomain(), null, message);
         } else if ((event.getEventType() == EventType.UPDATE)) {
             channel.basicPublish("exchange", "reader", null, message);
         } else if ((event.getEventType() == EventType.DELETE)) {
-            channel.basicPublish("exchange", "reader", null, message);
+            channel.basicPublish("exchange", event.getNews().getDomain(), null, message);
         } else if ((event.getEventType() == EventType.READ)) {
             channel.basicPublish("exchange", "editor", null, message);
         }
@@ -46,7 +46,6 @@ public class NewsProviderManager {
         try {
             connection = connectionFactory.newConnection();
             channel = connection.createChannel();
-            channel.queueDeclare("editor", false, false, false, null);
             channel.exchangeDeclare("exchange", "direct");
             for (Event elem : events){
                 this.publishNews(elem);

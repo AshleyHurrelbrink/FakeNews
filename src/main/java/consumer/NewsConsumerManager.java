@@ -33,16 +33,12 @@ public class NewsConsumerManager {
     }
 
     public void init() throws IOException {
-        channel.queueDeclare("reader1", false, false, false, null);
-        channel.queueDeclare("reader2", false, false, false, null);
-        channel.queueDeclare("editor", false, false, false, null);
         channel.exchangeDeclare("exchange", "direct");
-        channel.queueBind("reader1","exchange", "reader");
-        channel.queueBind("reader2","exchange", "reader");
-        channel.queueBind("editor","exchange", "editor");
     }
 
-    public void consume(String str, EventHandler handler) throws IOException {
+    public void consume(String str, EventHandler handler, String domain) throws IOException {
+        channel.queueDeclare(str, false, false, false, null);
+        channel.queueBind(str,"exchange", domain);
         channel.basicConsume(str, true, (consumerTag, message) -> {
             byte[] data = message.getBody();
             Event event = SerializationUtils.deserialize(data);

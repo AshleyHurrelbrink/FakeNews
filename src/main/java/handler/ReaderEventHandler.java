@@ -38,6 +38,10 @@ public class ReaderEventHandler implements EventHandler{
         }
     }
 
+    public String getDomainInterest() {
+        return domainInterest;
+    }
+
     public NewsConsumerService getNewsConsumerService() {
         return newsConsumerService;
     }
